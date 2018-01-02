@@ -1,1 +1,15 @@
+<<<<<<< HEAD
 h
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+hello worlddsadsadsadsadsadsa
+=======
+hello world i'm joey 
+>>>>>>> 72401a6975260276a36e28a7f655069f2fdac69b
+=======
+hello world i'm joey ndkjfhjirejgtidsadsdsads dsa dsa dsa das dsa dsa d
+>>>>>>> 60f69d15996ea5f816ff645e314200f3bf5b953d
+
+dsadsadsadsadsadsa
+>>>>>>> 60f1b175e9864366ee3eb7845d7de8d36a81e334
