@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 hello worlddsadsadsadsadsadsa
+=======
+hello world i'm joey 
+>>>>>>> 72401a6975260276a36e28a7f655069f2fdac69b
