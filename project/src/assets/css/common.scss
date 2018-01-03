@@ -1,0 +1,28 @@
+body,h1,h2,h3,h4,h5,h6,p,img,a,input,ul,ol,li,dl,dt,dd,table,figure,figcaption,div,span,i{
+    padding:0; margin:0;
+}
+header,footer,main,nav,aside,section,article,figure,figcaption{
+    display:block;
+}
+ul,ol{ 
+    list-style:none;
+}
+img{ 
+    display:block; border:0;
+}
+input{ 
+    outline:none;
+}
+body{ 
+    font-size:12px; font-family:"微软雅黑"; color:#666666; background:#f1f1f1;
+}
+a{
+	text-decoration:none;
+}
+
+.l{
+	float:left;
+}
+.r{
+	float:right;
+}

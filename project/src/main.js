@@ -6,10 +6,15 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+
+import { Search } from 'mint-ui';
+Vue.component(Search.name, Search);
+
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
+  el: '#all',
   router,
-  template: '<App/>',
-  components: { App }
+  // template: '<App/>',
+  //components: { App }
+  render: h=>h(App)
 })

@@ -1,23 +1,175 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+  <div id="all">
+    <div class="header">
+      <div v-if="home">
+        <div class="logo">
+          <img src="./assets/logo.png" alt="">
+        </div>
+        <div class="search">
+          <form action="" method="get" accept-charset="utf-8">
+            <input class="l" type="text" name="search" :value="search" placeholder="搜索商品or品牌">
+            <button class="r" type="button"><i class="iconfont">&#xe657;</i></button>
+          </form>
+          
+        </div>
+        <div class="my">
+          <router-link to="/my"  activeClass="active"><i class="iconfont">&#xe502;</i></router-link>
+        </div>
+      </div>
+      
+    </div>
+    <div class="main">
+          <router-view></router-view>
+    </div>
+    <div class="footer">
+      <ul>
+        <router-link to="/home" tag="li" activeClass="active"><i class="iconfont">&#xe608;</i><br>首页</router-link> 
+        <router-link to="/first" tag="li" activeClass="active"><i class="iconfont">&#xe674;</i><br>抢先</router-link> 
+        <router-link to="/sort" tag="li" activeClass="active"><i class="iconfont">&#xe610;</i><br>分类</router-link> 
+        <router-link to="/cart" tag="li" activeClass="active"><i class="iconfont">&#xe6eb;</i><br>购物车</router-link> 
+        <router-link to="/my" tag="li" activeClass="active"><i class="iconfont">&#xe502;</i><br>我的</router-link> 
+      </ul>
+    </div>
+
   </div>
+
 </template>
 
 <script>
 export default {
-  name: 'app'
+  name: 'all',
+  data(){
+    return{
+      input21: '',
+      home:true,
+      show:true,
+      search:""
+    }
+  }
 }
-</script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+</script>
+<style src="./assets/css/common.scss"></style>
+<style  lang="scss">
+  @font-face {
+    font-family: 'iconfont';
+    src: url('./assets/font/iconfont.eot');
+    src: url('./assets/font/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('./assets/font/iconfont.woff') format('woff'),
+    url('./assets/font/iconfont.ttf') format('truetype'),
+    url('./assets/font/iconfont.svg#iconfont') format('svg');
+  }
+  .iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  #all{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction:column;
+
+    .header{
+      width: 100%;
+      height: 55px;
+      background: #ffffff;
+      >div{
+        box-sizing: border-box;
+        padding: 6px;
+        padding-left: 0;
+        width: 100%;
+        height: 100%;
+        // box-shadow: 0px 1px 6px rgba(0,0,0,.2);
+        display: flex;
+        justify-content:space-between;
+        .logo{
+          height:100%;
+          img{
+            height:100%;
+          }
+        }
+        .search{
+          height:100%;
+          width: 6rem;
+          border:1px solid #ccc;
+          border-radius: 5px;
+          box-sizing: border-box;
+          padding-left: 8px;
+          form{
+            height: 100%;
+            input{
+              display:block;
+              border:0;
+              height:100%;
+              width: 150px;
+              line-height: 42px
+            }
+            button{
+              height:100%;
+              background: none;
+              border: 0;
+              outline: none;
+
+
+              i{
+                font-size: 30px;
+                line-height: 20px;
+                color: #ccc;
+
+              }
+            }
+          }
+          
+        }
+        .my{
+          margin-left: 10px;
+          a{
+            .iconfont{
+              font-size: 30px;
+              color:#ccc;
+              line-height:55px;
+            }
+            
+        }
+          
+        
+      }
+    }
+      
+
+      
+
+    }
+    .main{
+      width: 100%;
+      max-width: 640px;
+      margin:0 auto;
+      flex:1;
+      overflow: hidden;
+      background: #ffffff;
+    }
+    .footer{
+      font-size: 14px;
+      box-sizing: border-box;
+      padding-top: 10px;
+      width: 100%;
+      height:55px;
+      box-shadow: 0px -1px 6px rgba(0,0,0,.2);
+      background: #ffffff;
+      ul{
+        display:flex;
+        li{
+          text-align: center;
+          flex:1;
+        }
+      }
+    }
+  }
+  .active{
+    color:#e5004f;
+  }
+  
 </style>
