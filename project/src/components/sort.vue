@@ -119,14 +119,18 @@ export default {
 		 #introBrand{
 		 	width: 100%;
 		 }
+		 #sortIntro{
+		 	height: 311px;
+		 }
 		}
-		.area-title span{
+		.area-title{
 			display: block;
 			height: 60px;
 			line-height: 60px;
 			font-size: 14px;
 			text-align: center;
 			margin-top: 10px;
+			margin-bottom: 10px;
 		}
 	}
 .main{
