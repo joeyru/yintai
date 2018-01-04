@@ -41,6 +41,14 @@
     				<img :src="data.imageurl" />
     			</div>
     		</div>
+    		<div id="sortMore">
+    			<div class="area-title">
+    				<span>更多类目</span>
+    			</div>
+    			<div class="sortItem" id="item_word" v-for="data in sortMore">
+    				{{data.name}}
+    			</div>
+    		</div>
     	</div>
     	
     	
@@ -61,7 +69,8 @@ export default {
       sidebarShow:false,
       datalist:[],
       looplist:[],
-      introBrand:[]
+      introBrand:[],
+      sortMore:[]
 
     }
   },
@@ -90,6 +99,7 @@ export default {
   	console.log(res.data);
 		this.looplist= res.data.data.recommend.categoryrecommend
 		this.introBrand = res.data.data.brand.brandrecommend
+		this.sortMore = res.data.data.more.morerecommend
 		//console.log(res.data.data)
   	})
   	
@@ -115,13 +125,21 @@ export default {
 					width: 60px;
 					height: 60px;
 				}
+				span{
+					font-size: 14px;
+				}
 			}
 		 #introBrand{
 		 	width: 100%;
+		 	height: 480px;
 		 }
 		 #sortIntro{
 		 	height: 311px;
 		 }
+		}
+		#item_word{
+			font-size: 14px;
+			padding: 5px 0;
 		}
 		.area-title{
 			display: block;
