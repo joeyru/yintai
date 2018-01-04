@@ -1,28 +1,38 @@
 <template>
-  <div id="app">
-    <div>
-      {{search}}
+  <div id="all">
+    <div class="header">
+      <navbar></navbar>
+      
     </div>
+    <div class="main">
+          <!-- <router-view></router-view> -->
+    </div>
+    <div class="footer">
+      <footerbar></footerbar>
+    </div>
+
   </div>
 </template>
 
 <script>
+import navbar from "./common/homenav";
+import footerbar from "./common/footer";
+
 export default {
-  name: 'app',
+  name: 'home',
   data () {
     return{
-      search:"搜索商品or品牌"
+      
     }
+  },
+  components:{
+    navbar,
+    footerbar
+
   }
 }
 </script>
 
-<style>
-*{
-  padding: 0;
-  margin: 0
-}
-#app {
+<style lang="scss">
 
-}
 </style>

@@ -1,49 +1,16 @@
 <template>
-  <div id="all">
-    <div class="header">
-      <div v-if="home">
-        <div class="logo">
-          <img src="./assets/logo.png" alt="">
-        </div>
-        <div class="search">
-          <form action="" method="get" accept-charset="utf-8">
-            <input class="l" type="text" name="search" :value="search" placeholder="搜索商品or品牌">
-            <button class="r" type="button"><i class="iconfont">&#xe657;</i></button>
-          </form>
-          
-        </div>
-        <div class="my">
-          <router-link to="/my"  activeClass="active"><i class="iconfont">&#xe502;</i></router-link>
-        </div>
-      </div>
-      
-    </div>
-    <div class="main">
-          <router-view></router-view>
-    </div>
-    <div class="footer">
-      <ul>
-        <router-link to="/home" tag="li" activeClass="active"><i class="iconfont">&#xe608;</i><br>首页</router-link> 
-        <router-link to="/first" tag="li" activeClass="active"><i class="iconfont">&#xe674;</i><br>抢先</router-link> 
-        <router-link to="/sort" tag="li" activeClass="active"><i class="iconfont">&#xe610;</i><br>分类</router-link> 
-        <router-link to="/cart" tag="li" activeClass="active"><i class="iconfont">&#xe6eb;</i><br>购物车</router-link> 
-        <router-link to="/my" tag="li" activeClass="active"><i class="iconfont">&#xe502;</i><br>我的</router-link> 
-      </ul>
-    </div>
-
-  </div>
+  <router-view></router-view>
 
 </template>
 
 <script>
+
+
 export default {
   name: 'all',
   data(){
     return{
-      input21: '',
-      home:true,
-      show:true,
-      search:""
+
     }
   }
 }
@@ -72,7 +39,7 @@ export default {
     display: flex;
     flex-direction:column;
 
-    .header{
+    #header{
       width: 100%;
       height: 55px;
       background: #ffffff;

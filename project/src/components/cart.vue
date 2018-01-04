@@ -1,28 +1,39 @@
 <template>
-  <div id="app">
-    <div>
-      {{search}}
+  <div id="all">
+    <div class="header">
+      <navbar text="购物车" :dot-show="false"></navbar>
+      
     </div>
+    <div class="main" style="background: #f1f1f1;">
+
+          <!-- <router-view></router-view> -->
+    </div>
+
+
   </div>
 </template>
 
 <script>
+import navbar from "./common/returnnav";
+import footerbar from "./common/footer";
+
 export default {
-  name: 'app',
+  name: 'home',
   data () {
     return{
-      search:"cart"
+      sortSearch:""
     }
+  },
+  components:{
+    navbar,
+    footerbar
+
   }
 }
 </script>
 
-<style>
-*{
-  padding: 0;
-  margin: 0
-}
-#app {
+<style lang="scss">
+.main{
 
 }
 </style>

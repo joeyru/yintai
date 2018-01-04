@@ -12,6 +12,11 @@ import RecommendComponent from "@/components/first/recommend.vue";
 import NewComponent from "@/components/first/new.vue";
 import CountdownComponent from "@/components/first//countdown.vue";
 
+
+import PassportComponent from "@/components/my/passport.vue";
+import UsernameComponent from "@/components/my/usename.vue";
+
+
 Vue.use(Router) //注册路由
 
 
@@ -25,6 +30,7 @@ const router =  new Router({
     {
       path: '/first',
       component: FirstComponent,
+
       children:[
         {
           path:"recommend",
@@ -38,7 +44,8 @@ const router =  new Router({
           path:"countdown",
           component:CountdownComponent
         }
-      ]
+      ],
+      redirect:"/first/recommend"
     },
     {
       path: '/sort',
@@ -50,7 +57,19 @@ const router =  new Router({
     },
     {
       path: '/my',
-      component: MyComponent
+      component: MyComponent,
+      children:[
+        {
+          path:"passport",
+          component:PassportComponent
+        },
+        {
+          path:"username",
+          component:UsernameComponent
+        }
+
+      ],
+      redirect:"/my/passport"
     },
     {
       path: '*',
