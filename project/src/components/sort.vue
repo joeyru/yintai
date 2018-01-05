@@ -19,7 +19,7 @@
     </div>
     <div id="container">
     	<ul id="navLeft">
-    		<li id="tabShow" v-for="data in datalist" @click="tabShow" activeClass="active">
+    		<li id="tabShow" v-for="data in datalist" @click="tabShow">
     			 {{data.name}}
     		</li>
     	</ul>
@@ -87,8 +87,8 @@ export default {
       
     },
     tabShow(){
-    	var tabShow = document.getElementById("tabShow");
-    	tabShow.style.background ="red"
+//  	var tabShow = document.getElementById("tabShow");
+//  	tabShow.style.background ="red"
     }
   },
   mounted () {
@@ -156,9 +156,6 @@ export default {
 			margin-top: 10px;
 			margin-bottom: 10px;
 		}
-	}
-	.active{
-		background: red;
 	}
 .main{
   .sort-search{

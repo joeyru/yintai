@@ -7,6 +7,7 @@ import FirstComponent from "@/components/first.vue";
 import SortComponent from "@/components/sort.vue";
 import CartComponent from "@/components/cart.vue";
 import MyComponent from "@/components/my.vue";
+import RegisterComponent from "@/components/register.vue";
 
 import RecommendComponent from "@/components/first/recommend.vue";
 import NewComponent from "@/components/first/new.vue";
@@ -15,6 +16,7 @@ import CountdownComponent from "@/components/first//countdown.vue";
 
 import PassportComponent from "@/components/my/passport.vue";
 import UsernameComponent from "@/components/my/usename.vue";
+
 
 
 Vue.use(Router) //注册路由
@@ -70,6 +72,11 @@ const router =  new Router({
 
       ],
       redirect:"/my/passport"
+    },
+    {
+    	path:'/register',
+    	component:RegisterComponent
+    	
     },
     {
       path: '*',
