@@ -31,6 +31,7 @@ export default {
 
 <style>
 	#wrap{
+		overflow: hidden;
 		margin-top: 18px;
 	}
 	.inputWrap{

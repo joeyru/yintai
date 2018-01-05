@@ -6,10 +6,17 @@
       
     </div>
     <div class="main">
-          <div id="first">
-
-            <router-view></router-view>
-            
+          <div id="inputWrap">
+          	 <div class="wrap" id="yintaiTel">
+          	 	 <input type="text" placeholder="请输入手机号"/>
+          	 </div>
+          	 <div class="wrap" id="yintaiPsd">
+          	 	<input type="text" placeholder="请设置银泰护照密码" />
+          	 </div>
+          	 <div class="wrap">
+          	 	<input type="text" id="spdAgain" placeholder="请再次确认银泰护照密码" />
+          	 </div>
+          	 <button>创建银泰护照</button>
           </div>
     </div>
 
@@ -42,33 +49,35 @@ export default {
 </script>
 
 <style lang="scss">
-#first {
-  >ul{
-    height: 36px;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 4px 0 0 0;
-    border-top: 1px solid #ccc;
-    
-    display: flex;
-    li{
-      flex:1;
-      text-align: center;
-      line-height: 28px;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 4px;
-
-    }
-    li.active{
-      border-bottom: 1px solid #de2e6f;
-    }
-    li:nth-of-type(2){
-      
-        border-left: 1px solid #ddd;
-        
-
- 
-    }
+#inputWrap {
+	width: 100%;
+  .wrap{
+  	width: 100%;
+  	height: 46px;
+  	line-height: 46px;
+  	border-top: 1px solid #ccc;
+  	border-bottom: 1px solid #ccc;
+  	/*padding-left:21px;*/
+  	input{
+  		border: 0;
+  		margin-left: 21px;
+  	}
+  }
+  #yintaiTel{
+  	border-top: 2px solid #ccc;
+  	border-bottom: 0;
+  }
+  #yintaiPsd{
+  	border-bottom: 0;
+  }
+  button{
+  	width: 80%;
+  	height: 35px;
+  	border: 0;
+  	outline: none;
+  	background: #CCCCCC;
+  	margin-top: 55px;
+  	margin-left: 10%;
   }
 }
 </style>
