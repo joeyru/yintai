@@ -6,9 +6,9 @@
     </div>
     <ul class="menu">
       <router-link to="/home" tag="li" activeClass="active"><i class="iconfont">&#xe608;</i>银泰首页</router-link> 
-      <router-link to="/sort" tag="li" activeClass="active"><i class="iconfont">&#xe610;</i>分类</router-link> 
-      <router-link to="/cart" tag="li" activeClass="active"><i class="iconfont">&#xe6eb;</i>购物车</router-link> 
-      <router-link to="/my" tag="li" activeClass="active"><i class="iconfont">&#xe502;</i>我的银泰</router-link>
+      <router-link to="/sort" tag="li" activeClass="active"><i class="iconfont">&#xe610;</i> 分类</router-link> 
+      <router-link to="/cart" tag="li" activeClass="active"><i class="iconfont">&#xe6eb;</i> 购物车</router-link> 
+      <router-link to="/my" tag="li" activeClass="active"><i class="iconfont">&#xe502;</i> 我的银泰</router-link>
         
     </ul>
   </div>
@@ -60,7 +60,7 @@ export default {
       height:30px;
       padding: 5px;
       border-bottom: 1px solid #ccc;
-      text-align: center;
+      
       line-height: 30px
     }
   }

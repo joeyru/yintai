@@ -12,7 +12,7 @@
               <router-link to="/my/username" tag="li" activeClass="active">银泰网账号</router-link>
             </ul>
 
-            <!-- <router-view></router-view> -->
+            <router-view></router-view>
             
           </div>
     </div>

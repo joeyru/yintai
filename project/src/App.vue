@@ -115,7 +115,7 @@ export default {
       max-width: 640px;
       margin:0 auto;
       flex:1;
-      overflow: hidden;
+      overflow: auto;
       background: #ffffff;
     }
     .footer{

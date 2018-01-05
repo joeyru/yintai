@@ -11,17 +11,17 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-    	'/Services/Proxy.ashx': {
-    		target: 'https://m.yintai.com',
-    		host: 'm.yintai.com',
-    		changeOrigin: true,
-    		// pathRewrite: {
-    		//     '^/v4/api': '/v4/api'
-    		//   }
-    	}
-    
-    	// /v4/api/billboard/home?__t=1514532132963
+        '/Services/Proxy.ashx': {
+                     target: 'https://m.yintai.com',
+                     host: 'm.yintai.com',
+                     changeOrigin:true,
+                     // pathRewrite: {
+                     //     '^/v4/api': '/v4/api'
+                     //   }
+                 }
+
     },
+
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
