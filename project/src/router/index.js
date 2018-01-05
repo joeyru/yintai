@@ -8,6 +8,7 @@ import SortComponent from "@/components/sort.vue";
 import CartComponent from "@/components/cart.vue";
 import MyComponent from "@/components/my.vue";
 
+
 import RecommendComponent from "@/components/first/recommend.vue";
 import NewComponent from "@/components/first/new.vue";
 import CountdownComponent from "@/components/first//countdown.vue";
