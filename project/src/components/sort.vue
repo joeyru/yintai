@@ -19,10 +19,12 @@
     </div>
     <div id="container">
     	<ul id="navLeft">
-    		<li v-for="data in datalist">
+    		<li id="tabShow" v-for="data in datalist" @click="tabShow" activeClass="active">
     			 {{data.name}}
     		</li>
     	</ul>
+    	
+    	<br />
     	<div id="introRight">
     		<div id="sortIntro">
     			<div class="area-title">
@@ -39,6 +41,14 @@
     			</div>
     			<div class="sortItem" v-for="data in introBrand">
     				<img :src="data.imageurl" />
+    			</div>
+    		</div>
+    		<div id="sortMore">
+    			<div class="area-title">
+    				<span>更多类目</span>
+    			</div>
+    			<div class="sortItem" v-for="data in sortMore">
+    				{{data.name}}
     			</div>
     		</div>
     	</div>
@@ -61,7 +71,8 @@ export default {
       sidebarShow:false,
       datalist:[],
       looplist:[],
-      introBrand:[]
+      introBrand:[],
+      sortMore:[]
 
     }
   },
@@ -73,7 +84,11 @@ export default {
   methods:{
     sidebarEvent(){
       this.sidebarShow=!this.sidebarShow;
-
+      
+    },
+    tabShow(){
+    	var tabShow = document.getElementById("tabShow");
+    	tabShow.style.background ="red"
     }
   },
   mounted () {
@@ -90,6 +105,7 @@ export default {
   	console.log(res.data);
 		this.looplist= res.data.data.recommend.categoryrecommend
 		this.introBrand = res.data.data.brand.brandrecommend
+		this.sortMore = res.data.data.more.morerecommend
 		//console.log(res.data.data)
   	})
   	
@@ -105,7 +121,8 @@ export default {
 		}
 		#introRight{
 			width: 75%;
-			overflow: hidden;
+			height: 600px;
+			overflow: auto;
 			/*padding: 0 10px;*/
 			.sortItem{
 				text-align: center;
@@ -118,9 +135,16 @@ export default {
 			}
 		 #introBrand{
 		 	width: 100%;
+		 	height: 482px;
 		 }
 		 #sortIntro{
 		 	height: 311px;
+		 }
+		 #sortMore{
+		 	font-size: 14px;
+		 	.sortItem{
+		 		padding: 5px 0;
+		 	}
 		 }
 		}
 		.area-title{
@@ -132,6 +156,9 @@ export default {
 			margin-top: 10px;
 			margin-bottom: 10px;
 		}
+	}
+	.active{
+		background: red;
 	}
 .main{
   .sort-search{
@@ -175,6 +202,8 @@ export default {
 }
 #navLeft{
 	width: 25%;
+	height: 600px;
+	overflow: auto;
 	background: #f5f5f5;
 }
 #navLeft li{
