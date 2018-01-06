@@ -138,5 +138,8 @@ export default {
   .active{
     color:#e5004f;
   }
+  .mint-indicator{
+    display: none;
+  }
   
 </style>
