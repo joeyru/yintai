@@ -7,7 +7,7 @@
     <div class="main" >
       <swipe class="my-swipe homeslider" id="swipe"> 
         <swipe-item class="slide1" v-for="data in swipelist" :key="data.id">
-          <a href="#" title=""><img :src="data.imgurl" alt="" id="img"></a>
+          <a href="#" title=""><img :src="data.imgurl" alt="" id="swipeimg"></a>
         </swipe-item>
 
       </swipe>
@@ -67,16 +67,14 @@
       </ul>
       <img :src="specialTitle.imgurl" alt="">
       <ul class="specialList">
-        <li v-for="data in specialList">
-          <a :href="data.jumpurl" title="">
-            <img :src="data.imgurl" alt="" v-if="data.imgurl">
-            <img src="../assets/logo.png" alt="" v-else>
-            <p>{{data.extra.productdetail.name}}</p>
-            <p>
+        <li v-for="data in specialList" :key="data.itemid" @click="todetail(data.itemid)">
+            <img :src="data.imgurl" alt="" v-if="data.imgurl" >
+            <img src="../assets/logo.png" alt="" v-else >
+            <p >{{data.extra.productdetail.name}}</p>
+            <p >
               <span>￥{{data.extra.productdetail.marketprice+".00"}}</span>
               <span>￥{{data.extra.productdetail.price+".00"}}</span>
             </p>
-          </a>
         </li>
       </ul>
       <div class="homesubnav">
@@ -111,7 +109,7 @@
 <script>
 
 import axios from "axios";
-
+import router from "@/router";
 import navbar from "./common/homenav";
 import footerbar from "./common/footer";
 
@@ -119,6 +117,8 @@ import slider from "./home/slider";
 
 require('vue-swipe/dist/vue-swipe.css');
 import { Swipe, SwipeItem } from 'vue-swipe';
+
+import { Indicator } from 'mint-ui';
 
 
 
@@ -144,8 +144,13 @@ export default {
     "swipe-item":SwipeItem
 
   },
+  methods:{
+    todetail(index){
+      router.push(`/detail/${index}`);
+    }
+  },
   mounted(){
-    
+    Indicator.open();
     axios.get("/Services/Proxy.ashx?r=201801041312&os=HTML5&client_v=1.0.0&pageid=104001&previewtime=0&methodName=products.template.getpage_1.0.0&method=products.template.getpage&apptype=10&ver=1.0.0&pageindex=1").then(res=>{
       var datalist = res.data.data;
       this.swipelist= datalist.bannerlist;
@@ -164,10 +169,16 @@ export default {
       this.specialTitle =templatelist[33].items[0];
       for(let i=34;i<templatelist.length;i++){
         this.specialList.push(...templatelist[i].items);
+      };
+      // var swipe = document.getElementById('swipe');
 
-      }
+      // console.log(document.querySelector('#swipeimg'));
 
-    })
+
+
+    });
+
+    
   }
 }
 </script>
@@ -180,8 +191,11 @@ export default {
       font-size: 30px;
       overflow: hidden;
       text-align: center;
+      height: 3rem;
+      overflow: hidden;
       .slide1{
         width: 100%;
+
         a{
           img{
           width: 100%;

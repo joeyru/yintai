@@ -45,6 +45,7 @@ export default {
       width: 100%;
       height: 40px;
       background: #ffffff;
+      box-sizing: border-box;
       >div{
         box-sizing: border-box;
         padding: 6px;

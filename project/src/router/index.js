@@ -17,6 +17,7 @@ import CountdownComponent from "@/components/first//countdown.vue";
 import PassportComponent from "@/components/my/passport.vue";
 import UsernameComponent from "@/components/my/usename.vue";
 
+import DetailComponent from "@/components/detail";
 
 
 Vue.use(Router) //注册路由
@@ -72,6 +73,14 @@ const router =  new Router({
 
       ],
       redirect:"/my/passport"
+    },
+    {
+      path:"/detail/:id",
+      component:DetailComponent
+    },
+    {
+      path:"/detail",
+      component:DetailComponent
     },
     {
     	path:'/register',

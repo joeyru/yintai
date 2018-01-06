@@ -1,6 +1,6 @@
 <template>
   <transition name="fade">
-  <div id="sidebar">
+  <div id="sidebar" :style="setHeight()">
     <div class="black">
       
     </div>
@@ -17,13 +17,19 @@
 
 <script>
 
+
 export default {
   name: 'sidebar',
   data () {
     return{
-
+      height:''
     }
   },
+  methods:{
+    setHeight(){
+      return 'height:'+(document.documentElement.clientHeight-41)+'px';
+    }
+  }
 
 }
 </script>
