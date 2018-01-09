@@ -139,7 +139,7 @@ export default {
     color:#e5004f;
   }
   .mint-indicator{
-    display: none;
+    display:none;
   }
   
 </style>

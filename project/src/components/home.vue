@@ -77,6 +77,7 @@
             </p>
         </li>
       </ul>
+
       <div class="homesubnav">
           <ul class="index">
             <li><a href="/#/home" title="">首页</a></li>
@@ -151,23 +152,25 @@ export default {
   },
   mounted(){
     Indicator.open();
-    axios.get("/Services/Proxy.ashx?r=201801041312&os=HTML5&client_v=1.0.0&pageid=104001&previewtime=0&methodName=products.template.getpage_1.0.0&method=products.template.getpage&apptype=10&ver=1.0.0&pageindex=1").then(res=>{
+    axios.get("/Services/Proxy.ashx?r=20180191543&os=HTML5&client_v=1.0.0&pageid=104001&previewtime=0&methodName=products.template.getpage_1.0.0&method=products.template.getpage&apptype=10&ver=1.0.0&pageindex=1").then(res=>{
       var datalist = res.data.data;
+      // console.log(datalist);
       this.swipelist= datalist.bannerlist;
+
       var templatelist = datalist.templatelist;
       this.four= templatelist[0].items;
       this.stop= templatelist[1].items[0];
       this.recommend = templatelist[3].items[0];
       this.recommendimg = [...templatelist[4].items,...templatelist[5].items];
-      var market = [templatelist[7].items[0],...templatelist[8].items,...templatelist[9].items];
-      var beauti = [templatelist[11].items[0],...templatelist[12].items,...templatelist[13].items];
-      var expenssive = [templatelist[14].items[0],...templatelist[15].items,...templatelist[16].items];
-      var shoes = [templatelist[17].items[0],...templatelist[18].items,...templatelist[19].items];
-      var sports = [templatelist[23].items[0],...templatelist[24].items,...templatelist[25].items];
-      var bags = [templatelist[27].items[0],...templatelist[28].items,...templatelist[30].items];
+      var market = [templatelist[8].items[0],...templatelist[9].items,...templatelist[10].items];
+      var beauti = [templatelist[12].items[0],...templatelist[13].items,...templatelist[14].items];
+      var expenssive = [templatelist[15].items[0],...templatelist[16].items,...templatelist[17].items];
+      var shoes = [templatelist[18].items[0],...templatelist[19].items,...templatelist[20].items];
+      var sports = [templatelist[24].items[0],...templatelist[25].items,...templatelist[26].items];
+      var bags = [templatelist[28].items[0],...templatelist[29].items,...templatelist[31].items];
       this.sortItems.push(market,beauti,expenssive,shoes,bags,sports);
-      this.specialTitle =templatelist[33].items[0];
-      for(let i=34;i<templatelist.length;i++){
+      this.specialTitle =templatelist[34].items[0];
+      for(let i=35;i<templatelist.length;i++){
         this.specialList.push(...templatelist[i].items);
       };
       // var swipe = document.getElementById('swipe');
